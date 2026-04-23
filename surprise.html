@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For my Cute baby girl Janvi 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.active { display: flex; }
+
+h1 { font-size: 3rem; color: #fff; }
+p { color: white; max-width: 600px; }
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ff6f91;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+button:hover { background: #ff3f6c; }
+
+/* Special gallery section */
+.special-gallery h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Grid layout */
+.special-gallery .gallery {
+   display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 900px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.special-gallery .gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Image styling */
+.special-gallery .gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Wave bounce animation */
+@keyframes waveBounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-15px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hover on whole gallery → wave effect */
+.special-gallery .gallery:hover img {
+  animation: waveBounce 0.6s ease;
+}
+
+/* Delay = wave effect */
+.special-gallery .gallery img:nth-child(1) { animation-delay: 0s; }
+.special-gallery .gallery img:nth-child(2) { animation-delay: 0.1s; }
+.special-gallery .gallery img:nth-child(3) { animation-delay: 0.2s; }
+.special-gallery .gallery img:nth-child(4) { animation-delay: 0.3s; }
+
+/* Button styling */
+.special-gallery button {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #ff6f91, #ff3f6c);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.teddy {
+  width: 80px;
+  position: absolute;
+  bottom: -100px;
+  animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline div {
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <h1>Hey You Gulab Jamun 💕</h1>
+  <p>I made something special for you... but you have to explore it...... 😌</p>
+  <button onclick="nextPage(1)">Ready??</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <h1>You Are Special ✨, You know why? </h1>
+  <div class="card">Your smile : Like a baby doll, it can cool anyone 😊</div>
+  <div class="card">Talking to you : The best therapy for me 💬</div>
+  <div class="card">Your behaviour : The thing that made me attracts towards you 🌸</div>
+  <button onclick="nextPage(2)">Hit me</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page special-gallery">
+  <h1>Some unknown pics of this human being 🥰 📸</h1>
+  <div class="gallery">
+    <img src="hand.jpeg">
+    <img src="kiss.jpeg">
+    <img src="eyes.jpeg">
+    <img src="cute.jpeg">
+  </div>
+  <button onclick="nextPage(3)">goooooo</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <h1>Little Quiz 😏</h1>
+  <p>Who is your baby boy?????</p>
+  <button onclick="wrong()">Someone else</button>
+  <button onclick="correct()">Me 😎</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <h1>A Message 💌</h1>
+  <p id="message"></p>
+  <button onclick="typeMessage()">Reveal</button>
+</div>
+
+<!-- NEW PAGE 6 -->
+<div class="page">
+  <h1>Wait... there's more 👀</h1>
+  <p>I didn’t want this to end that quickly 😌</p>
+  <button onclick="nextPage(6)">Continue</button>
+</div>
+
+<!-- NEW PAGE 7 -->
+<div class="page">
+  <h1>Things I Like About You 💖</h1>
+  <div class="card">you  😊</div>
+  <div class="card">You  😄</div>
+  <div class="card">You ✨</div>
+  <div class="card">Everything about you..... 😌</div>
+  <button onclick="nextPage(7)">Next</button>
+</div>
+
+<!-- NEW PAGE 8 -->
+<div class="page">
+  <h1>Our Timeline ⏳</h1>
+  <h2>There are so many special dates, but i listed only these 😅😅</h2>
+  <div class="timeline">
+    <div>First time we talked : March/06/2026 💬</div>
+    <div>First call : March/07/2026 i think😄</div>
+    <div>First time we miss eachother : March/11/2026 😊</div>
+    <div>First time you gave me surprise  with flower bouquet : April/23/2026</div>
+  </div>
+  <button onclick="nextPage(8)">Next</button>
+</div>
+
+<!-- FINAL PAGE 9 -->
+<div class="page">
+  <h1>One Last Thing ❤️</h1>
+  <p>If this made you smile even a little... then it was worth it 😊</p>
+
+  <p>Then gimme a kissssssssssssss 😚</p>
+  <input id="kissInput" placeholder="" style="padding:10px;border-radius:20px;border:none;text-align:center;" />
+  <br/>
+  <button onclick="checkKiss()">Submit 💕</button>
+</div>
+
+<script>
+const pages = document.querySelectorAll('.page');
+
+function nextPage(index) {
+  pages.forEach(p => p.classList.remove('active'));
+  pages[index].classList.add('active');
+}
+
+function wrong() { alert("Wrong answer 😝 Try again!"); }
+function correct() { nextPage(4); }
+
+const text = "You make everything feel better just by being you. I just wanted to make you smile today 😊💖";
+let i = 0;
+
+function typeMessage() {
+  if (i < text.length) {
+    document.getElementById('message').innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeMessage, 40);
+  } else {
+    setTimeout(() => nextPage(5), 1000);
+  }
+}
+
+function checkKiss() {
+  const value = document.getElementById('kissInput').value;
+
+  if (value.includes('😘') || value.includes('😚') || value.includes('❤️')) {
+    createCuteExplosion();
+  } else {
+    alert("Nooo 😝 try a proper kiss!");
+  }
+}
+
+function createCuteExplosion() {
+  for (let i = 0; i < 40; i++) {
+    const el = document.createElement('div');
+    el.innerHTML = ['😘','💕','🧸','💗','🎀','❣️','🥰'][Math.floor(Math.random()*5)];
+    el.style.position = 'fixed';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.top = Math.random() * 100 + 'vh';
+    el.style.fontSize = (20 + Math.random() * 30) + 'px';
+    el.style.animation = 'pop 2s ease-out forwards';
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 2000);
+  }
+
+  document.body.style.background = 'linear-gradient(135deg, #ff758c, #ff7eb3)';
+}
+
+// pop animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes pop {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}`;
+document.head.appendChild(style);
+
+// Teddy animation
+// Cute emoji floating animation (replaces teddy/dog)
+setInterval(() => {
+  const el = document.createElement('div');
+
+  const emojis = ['😘','💕','🧸','💗','🎀','❣️','🥰'];
+  el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+  el.style.position = 'fixed';
+  el.style.bottom = '-50px';
+  el.style.left = Math.random() * 100 + 'vw';
+  el.style.fontSize = (20 + Math.random() * 20) + 'px';
+  el.style.animation = 'floatUp 6s linear forwards';
+
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 6000);
+}, 500);
+
+</script>
+
+</body>
+</html>
